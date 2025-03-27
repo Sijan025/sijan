@@ -14,5 +14,5 @@ A web app to help students manage schedules, track tasks, and get AI-powered stu
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/student-time-master.git
+git clone https://github.com/Sijan025/sijan.git
 cd student-time-master
