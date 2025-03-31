@@ -1,7 +1,5 @@
 # Timeless Watches - E-Commerce Website
 
-![Website Preview](https://i.imgur.com/JK9y5dN.png)
-
 A single-page e-commerce website for selling premium watches with QR code payments and order form integration.
 
 ## Features
