@@ -349,9 +349,9 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 class="text-3xl sm:text-4xl font-bold mb-6">Secure & Easy Payments</h2>
             <p class="text-lg mb-10 opacity-90">Scan the QR code with your Khalti app for instant payment, or proceed to our order form.</p>
-            <div class="qr-container bg-white p-8 rounded-xl inline-block mb-10 shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                <img src="khalti.jpg" alt="Khalti Payment QR Code" class="w-48 h-48 mx-auto mb-4 rounded-lg border-4 border-secondary" loading="lazy">
-                <p class="text-dark font-semibold text-lg">Scan to Pay with Khalti</p>
+            <div class="qr-container" role="img" aria-label="Khalti Payment QR Code">
+            <img src="khalti.jpg" alt="Khalti Payment QR Code" class="qr-image" loading="lazy" />
+            <p class="scan-text">Scan to Pay with Khalti</p>
             </div>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
                 <a href="https://forms.gle/aXkBF5z6uypmuBoa7" class="btn inline-block bg-secondary text-white py-3 px-8 rounded-full font-semibold text-lg hover:bg-red-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg w-full sm:w-auto" target="_blank" aria-label="Proceed to order form">Proceed to Order Form</a>
