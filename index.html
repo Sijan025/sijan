@@ -1,635 +1,580 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timeless Watches - Luxury Timepieces</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Explore Timeless Watches, offering luxury and precision timepieces with elegant designs and cutting-edge technology.">
+    <meta name="keywords" content="luxury watches, timepieces, Timeless Watches, smartwatch, dive watch, dress watch">
+    <meta name="author" content="Sijan Bastola">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Timeless Watches - Luxury & Precision Timepieces</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#2c3e50',
+                        'secondary': '#e74c3c',
+                        'light': '#ecf0f1',
+                        'dark': '#1a252f',
+                        'accent': '#3498db',
+                        'gold': '#D4AF37',
+                    },
+                    animation: {
+                        'gradient-pulse': 'gradientPulse 3s ease-in-out infinite',
+                        'subtle-bob': 'subtleBob 2s ease-in-out infinite alternate',
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        gradientPulse: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                        subtleBob: {
+                            '0%': { transform: 'translateY(0)' },
+                            '100%': { transform: 'translateY(-3px)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                    },
+                },
+            },
+        };
+    </script>
     <style>
         :root {
-            --primary: #2c3e50;
-            --secondary: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #1a252f;
-            --accent: #3498db;
+            --clr-primary: #2c3e50;
+            --clr-secondary: #e74c3c;
+            --clr-light: #ecf0f1;
+            --clr-dark: #1a252f;
+            --clr-accent: #3498db;
+            --clr-gold: #D4AF37;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1524592094714-0f0654e20314?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
         }
-        
-        body {
-            background-color: #f9f9f9;
-            color: var(--dark);
-        }
-        
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--dark));
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo i {
-            margin-right: 10px;
-            color: var(--secondary);
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 2rem;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
-        
-        .hero {
-            background: url('https://images.unsplash.com/photo-1523170335258-f5ed11844a49?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            color: white;
-            max-width: 600px;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: white;
-            padding: 0.8rem 1.8rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn:hover {
-            background-color: #c0392b;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin: 4rem 0 2rem;
-            font-size: 2.5rem;
-            color: var(--primary);
-            position: relative;
-        }
-        
-        .section-title::after {
+
+        .section-title-underline::after {
             content: '';
             display: block;
             width: 80px;
             height: 4px;
-            background-color: var(--secondary);
-            margin: 0.5rem auto;
+            background-color: var(--clr-secondary);
+            margin: 1rem auto 0;
         }
-        
-        .watches {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .watch-card {
-            background-color: white;
-            border-radius: 10px;
+
+        .btn {
+            position: relative;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            touch-action: manipulation;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .watch-card {
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        
-        .watch-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .watch-img {
-            height: 250px;
-            overflow: hidden;
-        }
-        
-        .watch-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .watch-card:hover .watch-img img {
-            transform: scale(1.05);
-        }
-        
-        .watch-info {
-            padding: 1.5rem;
-        }
-        
-        .watch-info h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-        
-        .watch-info .price {
-            font-size: 1.3rem;
-            color: var(--secondary);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            display: block;
-        }
-        
-        .watch-info p {
-            color: #666;
-            margin-bottom: 1.5rem;
-            line-height: 1.5;
+
+        .watch-card:active {
+            transform: scale(0.98);
         }
 
-        /* Cart Notification */
-        .cart-notification {
+        .section-animate {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .section-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--clr-light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--clr-primary);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--clr-dark);
+        }
+
+        .cart-progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background: rgba(255,255,255,0.3);
+            overflow: hidden;
+        }
+
+        .cart-progress::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: var(--clr-accent);
+            animation: progress 3s linear forwards;
+        }
+
+        @keyframes progress {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(0); }
+        }
+
+        .back-to-top {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #4CAF50;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--clr-primary);
             color: white;
-            padding: 15px 20px;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            transform: translateX(150%);
-            transition: transform 0.3s ease-in-out;
-            z-index: 1000;
-        }
-        .cart-notification.show { transform: translateX(0); }
-
-        /* Payment Section */
-        .payment-section {
-            background: linear-gradient(135deg, var(--primary), var(--dark));
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-        }
-        
-        .payment-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .payment-container h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .payment-container p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .qr-container {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            display: inline-block;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .qr-container img {
-            width: 200px;
-            height: 200px;
-            margin-bottom: 1rem;
-        }
-
-        /* Checkout Form */
-        .checkout-form {
-            display: none;
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            max-width: 500px;
-            margin: 2rem auto;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .checkout-form input,
-        .checkout-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .checkout-form textarea { height: 100px; }
-
-        /* Location Section */
-        .location {
-            padding: 4rem 0;
-            text-align: center;
-        }
-        
-        .map-container {
-            margin: 2rem auto;
-            max-width: 1000px;
-            height: 400px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .contact-card {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            width: 250px;
-            transition: transform 0.3s;
-        }
-        
-        .contact-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .contact-card i {
-            font-size: 2rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-        
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 3rem 0 1.5rem;
-            text-align: center;
-        }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
-            margin-bottom: 1.5rem;
-        }
-        
-        .footer-section h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--secondary);
-        }
-        
-        .footer-section p, .footer-section a {
-            color: #bbb;
-            line-height: 1.6;
-        }
-        
-        .footer-section a {
-            display: block;
-            margin-bottom: 0.5rem;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-section a:hover {
-            color: white;
-        }
-        
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .social-icons a {
-            color: white;
-            background-color: rgba(255, 255, 255, 0.1);
-            width: 40px;
-            height: 40px;
+            width: 3rem;
+            height: 3rem;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            z-index: 1000;
+            touch-action: manipulation;
         }
-        
-        .social-icons a:hover {
-            background-color: var(--secondary);
-            transform: translateY(-3px);
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
-        
-        .copyright {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 1.5rem;
-            color: #bbb;
-            font-size: 0.9rem;
+
+        .back-to-top:active {
+            transform: scale(0.9);
         }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+
+        .loading-spinner {
+            display: none;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid var(--clr-secondary);
+            border-radius: 50%;
+            width: 1.5rem;
+            height: 1.5rem;
+            animation: spin 1s linear infinite;
+            margin-left: 0.5rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .mobile-menu {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        @supports (-webkit-touch-callout: none) {
+            .btn, .watch-card, .back-to-top {
+                -webkit-tap-highlight-color: transparent;
             }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
+        }
+
+        h1, p {
+            font-size: clamp(1rem, 4vw, 1.5rem);
+        }
+
+        .watch-number {
+            position: absolute;
+            top: 0.5rem;
+            left: 0.5rem;
+            background-color: var(--clr-gold);
+            color: white;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            z-index: 10;
         }
     </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    <i class="fas fa-clock"></i>
+<body class="bg-light text-dark font-sans antialiased">
+    <header class="bg-gradient-to-r from-primary to-dark text-white py-4 sticky top-0 z-[100] shadow-2xl transition-all duration-300 ease-in-out" role="banner">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <nav class="flex justify-between items-center" aria-label="Main navigation">
+                <div class="logo text-3xl font-extrabold flex items-center tracking-tight">
+                    <i class="fas fa-clock mr-2 text-secondary transform group-hover:rotate-12 transition-transform duration-300"></i>
                     <span>Timeless</span>
                 </div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#watches">Watches</a></li>
-                    <li><a href="#payment">Payment</a></li>
-                    <li><a href="#location">Location</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                <ul class="hidden md:flex space-x-8 items-center">
+                    <li><a href="#home" class="font-medium hover:text-secondary transition-all duration-300 transform hover:scale-105" aria-label="Home">Home</a></li>
+                    <li><a href="#watches" class="font-medium hover:text-secondary transition-all duration-300 transform hover:scale-105" aria-label="Watches">Watches</a></li>
+                    <li><a href="#payment" class="font-medium hover:text-secondary transition-all duration-300 transform hover:scale-105" aria-label="Payment">Payment</a></li>
+                    <li><a href="#location" class="font-medium hover:text-secondary transition-all duration-300 transform hover:scale-105" aria-label="Location">Location</a></li>
+                    <li><a href="#contact" class="font-medium hover:text-secondary transition-all duration-300 transform hover:scale-105" aria-label="Contact">Contact</a></li>
                 </ul>
+                <div class="md:hidden">
+                    <button id="menuButton" class="text-white focus:outline-none focus:ring-2 focus:ring-accent p-2 rounded-md hover:bg-white/10 transition-colors" aria-label="Toggle menu" aria-expanded="false">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </nav>
+        </div>
+        <div id="mobileMenu" class="md:hidden hidden bg-dark/95 absolute top-full left-0 right-0 z-40 shadow-xl mobile-menu" aria-hidden="true">
+            <ul class="flex flex-col items-center space-y-3 py-5">
+                <li><a href="#home" class="block py-2 px-4 text-lg hover:text-secondary transition-colors duration-300 mobile-menu-link" aria-label="Home">Home</a></li>
+                <li><a href="#watches" class="block py-2 px-4 text-lg hover:text-secondary transition-colors duration-300 mobile-menu-link" aria-label="Watches">Watches</a></li>
+                <li><a href="#payment" class="block py-2 px-4 text-lg hover:text-secondary transition-colors duration-300 mobile-menu-link" aria-label="Payment">Payment</a></li>
+                <li><a href="#location" class="block py-2 px-4 text-lg hover:text-secondary transition-colors duration-300 mobile-menu-link" aria-label="Location">Location</a></li>
+                <li><a href="#contact" class="block py-2 px-4 text-lg hover:text-secondary transition-colors duration-300 mobile-menu-link" aria-label="Contact">Contact</a></li>
+            </ul>
         </div>
     </header>
 
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Crafting Time, Creating Legacy</h1>
-                <p>Discover our exquisite collection of luxury watches that combine precision engineering with timeless design.</p>
-                <a href="#watches" class="btn">Explore Collection</a>
+    <section id="home" class="hero-bg min-h-[90vh] flex items-center justify-center text-white text-center relative section-animate">
+        <div class="absolute inset-0"></div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl relative z-10">
+            <div class="animate-subtle-bob">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight [text-shadow:_2px_2px_8px_rgba(0,0,0,0.7)]">Crafting Time, Defining Legacy</h1>
+                <p class="text-lg sm:text-xl mb-10 opacity-95 max-w-2xl mx-auto [text-shadow:_1px_1px_4px_rgba(0,0,0,0.5)]">Explore our curated collection of luxury timepieces, where precision engineering meets timeless artistry.</p>
+                <a href="#watches" class="btn inline-block bg-gradient-to-r from-secondary via-red-500 to-orange-500 text-white py-4 px-10 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 animate-gradient-pulse" aria-label="Discover our collection">Discover Collection</a>
             </div>
         </div>
     </section>
 
-    <section class="container" id="watches">
-        <h2 class="section-title">Our Premium Collection</h2>
-        <div class="watches">
-            <div class="watch-card">
-                <div class="watch-img">
-                    <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Classic Chronograph">
-                </div>
-                <div class="watch-info">
-                    <h3>Classic Chronograph</h3>
-                    <span class="price">$1,299</span>
-                    <p>Precision Swiss movement with sapphire crystal and genuine leather strap. Water resistant to 50m.</p>
-                    <button class="btn add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="watch-card">
-                <div class="watch-img">
-                    <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Diver Pro">
-                </div>
-                <div class="watch-info">
-                    <h3>Diver Pro</h3>
-                    <span class="price">$1,899</span>
-                    <p>Professional diving watch with 300m water resistance, unidirectional bezel and luminescent markers.</p>
-                    <button class="btn add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="watch-card">
-                <div class="watch-img">
-                    <img src="https://images.unsplash.com/photo-1539874754764-5a96559165b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Heritage Automatic">
-                </div>
-                <div class="watch-info">
-                    <h3>Heritage Automatic</h3>
-                    <span class="price">$2,499</span>
-                    <p>Handcrafted automatic movement with exhibition case back and 42-hour power reserve.</p>
-                    <button class="btn add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="watch-card">
-                <div class="watch-img">
-                    <img src="https://images.unsplash.com/photo-1551818255-e6e10975bc17?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Minimalist Elegance">
-                </div>
-                <div class="watch-info">
-                    <h3>Minimalist Elegance</h3>
-                    <span class="price">$899</span>
-                    <p>Sleek design with Japanese quartz movement and scratch-resistant mineral glass.</p>
-                    <button class="btn add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="watch-card">
-                <div class="watch-img">
-                    <img src="https://images.unsplash.com/photo-1611591437281-4608be122683?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Pilot's Choice">
-                </div>
-                <div class="watch-info">
-                    <h3>Pilot's Choice</h3>
-                    <span class="price">$1,599</span>
-                    <p>Aviation-inspired watch with chronograph function and anti-magnetic protection.</p>
-                    <button class="btn add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="watch-card">
-                <div class="watch-img">
-                    <img src="https://images.unsplash.com/photo-1611591437910-4b1f9b38b7dd?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Lunar Edition">
-                </div>
-                <div class="watch-info">
-                    <h3>Lunar Edition</h3>
-                    <span class="price">$3,299</span>
-                    <p>Limited edition moonphase complication with 18k gold accents and alligator strap.</p>
-                    <button class="btn add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="payment-section" id="payment">
-        <div class="payment-container">
-            <h2>Easy QR Code Payments</h2>
-            <p>Scan the QR code below to make instant payments via Khalti</p>
-            
-            <div class="qr-container">
-                <img src="khalti.jpg" alt="Khalti Payment QR" style="width:200px; height:200px;">
-                <p>Scan to Pay via Khalti</p>  <!-- Updated payment method name -->
-            </div>
-            
-            <a href="https://forms.gle/aXkBF5z6uypmuBoa7" class="btn" target="_blank">Proceed to Order Form</a>
-            <a href="https://wa.me/9779765936742?text=I%20want%20to%20buy%20a%20watch%20from%20your%20store" class="btn whatsapp-btn" target="_blank" style="background-color: #25D366; margin-top: 15px;">
-                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-            </a>
-        </div>
-    </section>
-
-    <section class="location" id="location">
-        <div class="container">
-            <h2 class="section-title">Visit Our Store</h2>
-            <p>Experience our watches in person at our store in Fulbari-11, Nepal</p>
-            
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/place/Sijan+Bastola/@-33.872482,151.2034332,17z/data=!3m2!4b1!5s0x6b12ae3ea29f4e67:0x449d1c4359b20fd!4m9!1m2!10m1!1e2!3m5!1s0x6b12af5349773b71:0x9a934bcf96ed526c!8m2!3d-33.8724865!4d151.2060081!16s%2Fg%2F11tfzxq4kc?authuser=1&entry=ttu&g_ep=EgoyMDI1MDMyNS4xIKXMDSoASAFQAw%3D%3D" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-            
-            <div class="contact-info">
-                <div class="contact-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Address</h3>
-                    <p>Fulbari-11, Nepal</p>
-                </div>
-                
-                <div class="contact-card">
-                    <i class="fas fa-phone-alt"></i>
-                    <h3>Phone</h3>
-                    <p>+977 976-5936742</p>
-                </div>
-                
-                <div class="contact-card">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Email</h3>
-                    <p>sijanbastola1@gmail.com</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>About Timeless</h3>
-                    <p>Premium watches with timeless elegance. Visit us in Fulbari or order online.</p>
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/sijanbastola.00/"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/sijanbastola/"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/9779765936742"><i class="fab fa-whatsapp"></i></a>
+    <section id="watches" class="py-20 bg-slate-100 section-animate">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <h2 class="section-title-underline text-3xl sm:text-4xl font-bold text-center mb-16 text-primary">Featured Timepieces</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div class="watch-card bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group relative" aria-label="Watch 1: TechMaster Pro">
+                    <div class="watch-number">1</div>
+                    <div class="watch-img h-72 overflow-hidden relative aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="TechMaster Pro Smartwatch" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 lazy" loading="lazy">
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white text-lg font-semibold">View Details</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-primary">TechMaster Pro</h3>
+                        <span class="price block text-xl font-bold text-secondary mb-3">$499</span>
+                        <p class="text-gray-600 mb-5 text-sm leading-relaxed">Stay connected and track your fitness with cutting-edge technology and a sleek, modern design.</p>
+                        <button class="btn add-to-cart w-full bg-primary text-white py-3 px-4 rounded-lg font-semibold hover:bg-dark transition-colors duration-300 transform hover:scale-105 flex items-center justify-center" aria-label="Add TechMaster Pro to cart">
+                            Add to Cart
+                            <span class="loading-spinner"></span>
+                        </button>
                     </div>
                 </div>
-                
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <a href="#home">Home</a>
-                    <a href="#watches">Collections</a>
-                    <a href="#payment">Payment</a>
-                    <a href="#location">Store Location</a>
+                <div class="watch-card bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group relative" aria-label="Watch 2: OceanGuard 300M">
+                    <div class="watch-number">2</div>
+                    <div class="watch-img h-72 overflow-hidden relative aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1610792996950-7645ef7b3529?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="OceanGuard 300M Dive Watch" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 lazy" loading="lazy">
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white text-lg font-semibold">View Details</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-primary">OceanGuard 300M</h3>
+                        <span class="price block text-xl font-bold text-secondary mb-3">$1,750</span>
+                        <p class="text-gray-600 mb-5 text-sm leading-relaxed">Engineered for the deep. Robust build, helium escape valve, and exceptional luminosity for underwater adventures.</p>
+                        <button class="btn add-to-cart w-full bg-primary text-white py-3 px-4 rounded-lg font-semibold hover:bg-dark transition-colors duration-300 transform hover:scale-105 flex items-center justify-center" aria-label="Add OceanGuard 300M to cart">
+                            Add to Cart
+                            <span class="loading-spinner"></span>
+                        </button>
+                    </div>
                 </div>
-                
-                <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <a href="tel:+9779765936742"><i class="fas fa-phone"></i> +977 976-5936742</a>
-                    <a href="mailto:sijanbastola1@gmail.com"><i class="fas fa-envelope"></i> sijanbastola1@gmail.com</a>
-                    <a href="https://wa.me/9779765936742"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <div class="watch-card bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group relative" aria-label="Watch 3: Heritage Classic">
+                    <div class="watch-number">3</div>
+                    <div class="watch-img h-72 overflow-hidden relative aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1594576722512-582bcd071f5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Heritage Classic Dress Watch" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 lazy" loading="lazy">
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white text-lg font-semibold">View Details</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-primary">Heritage Classic</h3>
+                        <span class="price block text-xl font-bold text-secondary mb-3">$2,200</span>
+                        <p class="text-gray-600 mb-5 text-sm leading-relaxed">Timeless elegance with a hand-wound mechanical movement and sapphire crystal, perfect for formal occasions.</p>
+                        <button class="btn add-to-cart w-full bg-primary text-white py-3 px-4 rounded-lg font-semibold hover:bg-dark transition-colors duration-300 transform hover:scale-105 flex items-center justify-center" aria-label="Add Heritage Classic to cart">
+                            Add to Cart
+                            <span class="loading-spinner"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="watch-card bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group relative" aria-label="Watch 4: Aurora Chronograph">
+                    <div class="watch-number">4</div>
+                    <div class="watch-img h-72 overflow-hidden relative aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Aurora Chronograph" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 lazy" loading="lazy">
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white text-lg font-semibold">View Details</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-primary">Aurora Chronograph</h3>
+                        <span class="price block text-xl font-bold text-secondary mb-3">$3,500</span>
+                        <p class="text-gray-600 mb-5 text-sm leading-relaxed">A masterpiece of precision with a chronograph function and rose gold accents, designed for the discerning collector.</p>
+                        <button class="btn add-to-cart w-full bg-primary text-white py-3 px-4 rounded-lg font-semibold hover:bg-dark transition-colors duration-300 transform hover:scale-105 flex items-center justify-center" aria-label="Add Aurora Chronograph to cart">
+                            Add to Cart
+                            <span class="loading-spinner"></span>
+                        </button>
+                    </div>
                 </div>
             </div>
-            
-            <div class="copyright">
-                <p>&copy; 2023 Timeless Watches. All rights reserved.</p>
+        </div>
+    </section>
+
+    <section id="payment" class="bg-gradient-to-br from-primary via-dark to-black text-white py-20 text-center section-animate">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">Secure & Easy Payments</h2>
+            <p class="text-lg mb-10 opacity-90">Scan the QR code with your Khalti app for instant payment, or proceed to our order form.</p>
+            <div class="qr-container bg-white p-8 rounded-xl inline-block mb-10 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                <img src="images/khalti.jpg" alt="Khalti Payment QR Code" class="w-48 h-48 mx-auto mb-4 rounded-lg border-4 border-secondary" loading="lazy">
+                <p class="text-dark font-semibold text-lg">Scan to Pay with Khalti</p>
+            </div>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="https://forms.gle/aXkBF5z6uypmuBoa7" class="btn inline-block bg-secondary text-white py-3 px-8 rounded-full font-semibold text-lg hover:bg-red-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg w-full sm:w-auto" target="_blank" aria-label="Proceed to order form">Proceed to Order Form</a>
+                <a href="https://wa.me/9779765936742?text=I%20want%20to%20buy%20a%20watch%20from%20your%20store" class="btn whatsapp-btn inline-flex items-center justify-center bg-green-500 text-white py-3 px-8 rounded-full font-semibold text-lg hover:bg-green-600 transition-all duration-300 transform hover:scale-105 hover:shadow-lg w-full sm:w-auto" target="_blank" aria-label="Chat on WhatsApp">
+                    <i class="fab fa-whatsapp mr-2 text-xl"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="checkout-form hidden bg-white p-8 rounded-lg max-w-lg mx-auto my-10 shadow-xl ring-1 ring-slate-200">
+        <h3 class="text-xl font-semibold text-primary mb-6 text-center">Checkout Details</h3>
+        <input type="text" placeholder="Full Name" class="w-full p-3 mb-4 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-shadow duration-300 focus:shadow-md" aria-label="Full Name">
+        <input type="email" placeholder="Email Address" class="w-full p-3 mb-4 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-shadow duration-300 focus:shadow-md" aria-label="Email Address">
+        <textarea placeholder="Shipping Address" class="w-full p-3 mb-4 border border-gray-300 rounded-md h-28 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-shadow duration-300 focus:shadow-md" aria-label="Shipping Address"></textarea>
+        <button class="btn w-full bg-accent text-white py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105" aria-label="Place order">Place Order</button>
+    </div>
+
+    <section id="location" class="py-20 text-center bg-slate-50 section-animate">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <h2 class="section-title-underline text-3xl sm:text-4xl font-bold mb-6 text-primary">Visit Our Flagship Store</h2>
+            <p class="text-lg text-gray-700 mb-12 max-w-2xl mx-auto">Experience the world of Timeless Watches in person. Our experts are ready to assist you.</p>
+            <div class="map-container w-full max-w-5xl h-[450px] md:h-[500px] mx-auto rounded-xl overflow-hidden shadow-2xl mb-16 border-4 border-white">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112708.5833980318!2d83.9090098972656!3d28.229653800000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995937bbf0376ff%3A0xf6cf823b25802164!2sPokhara!5e0!3m2!1sen!2snp!4v1685258959000!5m2!1sen!2snp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Timeless Watches Store Location in Pokhara, Nepal"></iframe>
+            </div>
+            <div class="contact-info grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="contact-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1.5 hover:bg-slate-50">
+                    <i class="fas fa-map-marker-alt text-4xl text-secondary mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2 text-primary">Our Address</h3>
+                    <p class="text-gray-600 text-lg">Fulbari-11, Pokhara, Nepal</p>
+                </div>
+                <div class="contact-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1.5 hover:bg-slate-50">
+                    <i class="fas fa-phone-alt text-4xl text-secondary mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2 text-primary">Call Us</h3>
+                    <p class="text-gray-600 text-lg">+977 976-5936742</p>
+                </div>
+                <div class="contact-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1.5 hover:bg-slate-50">
+                    <i class="fas fa-envelope text-4xl text-secondary mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2 text-primary">Email Us</h3>
+                    <p class="text-gray-600 text-lg">sijanbastola1@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-dark text-slate-300 py-16 section-animate">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10 text-center md:text-left">
+                <div class="footer-section">
+                    <h3 class="text-xl font-semibold text-secondary mb-5">Timeless Watches</h3>
+                    <p class="mb-5 text-sm leading-relaxed">Discover precision, elegance, and a legacy of craftsmanship. Your journey into the world of fine timepieces starts here.</p>
+                    <div class="social-icons flex justify-center md:justify-start space-x-3">
+                        <a href="https://www.facebook.com/sijanbastola.00/" target="_blank" class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-lg hover:bg-secondary hover:text-white transition-all duration-300 transform hover:scale-110" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/sijanbastola/" target="_blank" class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-lg hover:bg-secondary hover:text-white transition-all duration-300 transform hover:scale-110" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/9779765936742" target="_blank" class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-lg hover:bg-secondary hover:text-white transition-all duration-300 transform hover:scale-110" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="text-xl font-semibold text-secondary mb-5">Explore</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="hover:text-white transition-colors duration-300 text-sm" aria-label="Home">Home</a></li>
+                        <li><a href="#watches" class="hover:text-white transition-colors duration-300 text-sm" aria-label="Our Collections">Our Collections</a></li>
+                        <li><a href="#payment" class="hover:text-white transition-colors duration-300 text-sm" aria-label="Payment Options">Payment Options</a></li>
+                        <li><a href="#location" class="hover:text-white transition-colors duration-300 text-sm" aria-label="Find Our Store">Find Our Store</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300 text-sm" aria-label="Blog (Coming Soon)">Blog (Coming Soon)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="text-xl font-semibold text-secondary mb-5">Get In Touch</h3>
+                    <ul class="space-y-3">
+                        <li><a href="tel:+9779765936742" class="inline-flex items-center hover:text-white transition-colors duration-300 text-sm" aria-label="Call us"><i class="fas fa-phone mr-2 opacity-75"></i> +977 976-5936742</a></li>
+                        <li><a href="mailto:sijanbastola1@gmail.com" class="inline-flex items-center hover:text-white transition-colors duration-300 text-sm" aria-label="Email us"><i class="fas fa-envelope mr-2 opacity-75"></i> sijanbastola1@gmail.com</a></li>
+                        <li><a href="https://wa.me/9779765936742" class="inline-flex items-center hover:text-white transition-colors duration-300 text-sm" aria-label="WhatsApp Inquiry"><i class="fab fa-whatsapp mr-2 opacity-75"></i> WhatsApp Inquiry</a></li>
+                        <li class="text-sm flex items-start justify-center md:justify-start pt-1"><i class="fas fa-map-marker-alt mr-2 mt-1 opacity-75"></i>Fulbari-11, Pokhara, Nepal</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright border-t border-slate-700 pt-10 text-center text-sm text-slate-400">
+                <p>© 2025 Timeless Watches. All Rights Reserved. Crafted with <i class="fas fa-heart text-secondary"></i> by Sijan Bastola.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Cart Notification -->
-    <div class="cart-notification" id="cartNotification">
-        <i class="fas fa-check-circle"></i>
-        <span>Item added to cart!</span>
+    <div id="cartNotification" class="fixed bottom-6 right-6 bg-green-600 text-white p-5 rounded-xl flex items-center gap-x-3 shadow-2xl transform translate-x-[120%] opacity-0 transition-all duration-500 ease-out z-[1000]">
+        <i class="fas fa-check-circle text-2xl"></i>
+        <span class="font-medium text-lg">Item added to cart!</span>
+        <div class="cart-progress"></div>
     </div>
 
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
     <script>
-        // Simple Cart Notification
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', function() {
-                const notification = document.getElementById('cartNotification');
-                notification.classList.add('show');
-                setTimeout(() => notification.classList.remove('show'), 3000);
+        // Feature Detection for Touch Support
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+        // Smooth Scrolling with Event Delegation
+        document.addEventListener('click', (e) => {
+            const anchor = e.target.closest('a[href^="#"]');
+            if (!anchor) return;
+            e.preventDefault();
+            const targetId = anchor.getAttribute('href');
+            if (targetId === '#') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return;
+            }
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const headerOffset = document.querySelector('header').offsetHeight;
+                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                window.scrollTo({
+                    top: elementPosition - headerOffset,
+                    behavior: 'smooth'
+                });
+            }
+        });
+
+        // Mobile Menu Toggle with Swipe Support
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = menuButton.querySelector('i');
+
+        menuButton.addEventListener('click', () => {
+            toggleMobileMenu();
+        });
+
+        function toggleMobileMenu() {
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('opacity-0', isHidden);
+            mobileMenu.classList.toggle('opacity-100', !isHidden);
+            mobileMenu.classList.toggle('translate-y-[-10px]', isHidden);
+            mobileMenu.classList.toggle('translate-y-0', !isHidden);
+            menuButton.setAttribute('aria-expanded', !isHidden);
+            menuIcon.classList.toggle('fa-bars', isHidden);
+            menuIcon.classList.toggle('fa-times', !isHidden);
+        }
+
+        // Swipe Gesture for Mobile Menu
+        if (isTouchDevice) {
+            let touchStartX = 0;
+            let touchStartY = 0;
+            mobileMenu.addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].clientX;
+                touchStartY = e.touches[0].clientY;
             });
+            mobileMenu.addEventListener('touchend', (e) => {
+                const touchEndX = e.changedTouches[0].clientX;
+                const touchEndY = e.changedTouches[0].clientY;
+                const deltaX = touchEndX - touchStartX;
+                const deltaY = Math.abs(touchEndY - touchStartY);
+                if (deltaX > 50 && deltaY < 50) { // Swipe right
+                    toggleMobileMenu();
+                }
+            });
+        }
+
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target.classList.contains('mobile-menu-link')) {
+                toggleMobileMenu();
+            }
+        });
+
+        // Cart Notification with Spinner
+        let cartCount = 0;
+        document.addEventListener('click', (e) => {
+            const button = e.target.closest('.add-to-cart');
+            if (!button) return;
+            const spinner = button.querySelector('.loading-spinner');
+            spinner.style.display = 'inline-block';
+            button.disabled = true;
+            setTimeout(() => {
+                spinner.style.display = 'none';
+                button.disabled = false;
+                const notification = document.getElementById('cartNotification');
+                cartCount++;
+                notification.querySelector('span').textContent = `Item added to cart! (${cartCount})`;
+                notification.classList.remove('translate-x-[120%]', 'opacity-0');
+                notification.classList.add('translate-x-0', 'opacity-100');
+                setTimeout(() => {
+                    notification.classList.remove('translate-x-0', 'opacity-100');
+                    notification.classList.add('translate-x-[120%]', 'opacity-0');
+                }, 3000);
+            }, 1000);
+        });
+
+        // Header Scroll Effect
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('py-3', window.scrollY > 50);
+            header.classList.toggle('py-4', window.scrollY <= 50);
+            header.classList.toggle('shadow-md', window.scrollY > 50);
+            header.classList.toggle('shadow-2xl', window.scrollY <= 50);
+        });
+
+        // Section Fade-In Animation
+        const sections = document.querySelectorAll('.section-animate');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        sections.forEach(section => observer.observe(section));
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.scrollY > 300);
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Prevent Double Tap Zoom on iOS
+        document.addEventListener('touchend', (e) => {
+            const now = new Date().getTime();
+            const lastTouch = e.target.getAttribute('last-touch') || 0;
+            if (now - lastTouch < 300) {
+                e.preventDefault();
+            }
+            e.target.setAttribute('last-touch', now);
         });
     </script>
 </body>
